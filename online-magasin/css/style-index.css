@@ -1,0 +1,157 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: montserrat;
+    background: #F6EDD9;
+}
+
+nav{
+    background: white;
+     height: 80px;
+     width: 100%;
+     position: relative;
+}
+
+#studiemad-logo{
+    height: 50px;
+    width: auto;
+    position: absolute;
+}
+
+
+.logo{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    max-width: 100%;
+    height: auto;
+    left: 50%;
+    top: 20%;
+    margin-left: -150px;
+}
+
+.menupunkter{
+    text-align: center;
+    position: absolute;
+}
+
+.menupunkter li{
+    display: inline-block;
+    line-height: 170px;
+    margin: 5px 142px;
+}
+
+.menupunkter li a{
+    color: black;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+.menupunkter a:hover{
+    background: greenyellow;
+    transition: .5s;
+}
+
+.checkbtn{
+    font-size: 50px;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+#menu{
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+.search{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    background: yellowgreen;
+    border-radius: 60px;
+    transition: 0.5s;
+    box-shadow: 0 0 0 5px yellowgreen;
+    float: right;
+    top: 10px;
+    right: 20px;
+}
+
+.search .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 60px;
+    height: 60px;
+    background: white;
+    border-radius: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+.search .icon:before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid yellowgreen;
+    border-radius: 50%;
+    transform: translate(-5px,-5px);
+}
+
+.search .icon:after{
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 15px;
+    background: yellowgreen;
+    transform: translate(6px,6px) rotate(315deg);
+}
+
+@media (max-width: 858px){
+    #menu{
+        display: block;
+        line-height: 80px;
+    }
+    .menupunkter{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    .menupunkter li{
+        display: block;
+    }
+    .menupunkter li a{
+        font-size: 30px;
+    }
+    a:hover{
+        background: none;
+        color: yellowgreen;
+    }
+    #check:checked ~ .menupunkter{
+        left: 0;
+    }
+}
+
+
+.artikler{
+    margin-top: 50px;
+}

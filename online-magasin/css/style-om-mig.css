@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: montserrat;
+    background: #F6EDD9;
+}
+
+nav{
+    background: white;
+     height: 80px;
+     width: 100%;
+     position: relative;
+}
+
+#studiemad-logo{
+    height: 50px;
+    width: auto;
+}
+
+
+.logo{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    left: 50%;
+    top: 20%;
+    margin-left: -150px;
+}
+
+nav ul{
+    text-align: center;
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 140px;
+}
