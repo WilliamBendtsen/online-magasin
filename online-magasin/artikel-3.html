@@ -4,23 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel 3</title>
+    <!-- Link til eksternt stylesheet -->
     <link rel="stylesheet" href="css/style-artikel-3.css">
 </head>
 <body>
+    <!--  Navigationsbar med interaktiv søgebar lavet vha. javascript -->
     <nav>
+
+        <!-- Hjemmesidens logo -->
         <div class="logo">
-            <a href="index.html"><img id="studiemad-logo" src="img/Studiemad logo.png" alt="studiemad logo"></a>
+            <a href="index.html"><img id="studiemad-logo" src="img/studiemad-logo.webp" alt="studiemad logo"></a>
         </div>
-        <ul>
+
+        <!-- Hjemmesidens søgefunktion -->
+        <div class="search">
+            <div class="icon"></div>
+            <div class="input">
+                <input type="text" placeholder="Søg" id="mySearch">
+            </div>
+            <span class="clear" onclick="document.getElementById('mySearch').value = ''"></span>
+        </div>
+
+        <!-- Tilhørende javascript til søgefunktionen -->
+        <script>
+            const icon = document.querySelector('.icon')
+            const search = document.querySelector('.search')
+            icon.onclick = function(){
+                search.classList.toggle('active')
+            }
+        </script>
+
+        <!-- Menupunkterne der befinder sig under min navbar -->
+        <ul class="menupunkter">
             <li><a href="index.html">Nyheder</a></li>
-            <li><a href="madplan.html">Madplan</a></li>
+            <li>
+                <a id="madplan" href="madplan.html">Madplan</a>
+                <ul class="dropdown">
+                    <li><a href="madpakkeguide.html">Madpakkeguide</a></li>
+                    <li><a href="indkoebsguide.html">Indkøbsguide</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="opskrifter.html">Opskrifter</a>
+                <ul class="dropdown">
+                    <li><a href="morgenmad.html">Morgenmad</a></li>
+                    <li><a href="frokost.html">Frokost</a></li>
+                    <li><a href="aftensmad.html">Aftensmad</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="vegetar.html">Vegetar</a></li>
+                </ul>
+            </li>
             <li><a href="hjemmesider-og-apps.html">Hjemmesider/Apps</a></li>
-            <li><a href="forum.html">Forum</a></li>
             <li><a href="om-mig.html">Om Mig</a></li>
         </ul>
     </nav>
     
+    <!-- Hele artiklen opdelt i sin egen div -->
+    <div class="artikel">
+        <!-- Artiklens forord opdelt i sin egen div -->
+    <div class="forord">
     <h1>3 grunde til hvorfor du skal prøve vegetarlivet som studerende</h1>
-    
+    <br> <br>
+    <p id="forord">Der er desværre alt for mange der forbinder vegetarer og specielt veganere med en gruppe af mennesker der er alt for ekstreme inden for det felt, og vil derfor ikke identificeres med dem. <br> <br> Men hvad jeg føler der ikke bliver lagt nok fokus på, er hvor billigt det kan være at skifte til en livsstil med mindre kød, men endnu bedre, hvor meget det vil hjælpe dit fokus i forhold til dit studieliv at have en naturligt mere balanceret kost. <br> <br> Denne artikel vil gå mere i dybden af de 3 mest markante grunde til at netop du skal overveje at spise mere vegetarisk.
+    </p>
+    <br>
+    </div>
+    <!-- Artiklens første trin opdelt i en div med et tilhørende billede -->
+    <div class="billede">
+        <img src="img/penge-plante.webp" alt="dollartegn">
+
+        <h3 class="titel">1. Det koster mindre</h3>
+        
+        <p class="billedetekst">Det sidste man har lyst til er at ende den sidste uge af hver måned med en madplan bestående af rugbrød og havregryn, fordi pengene ikke lige rækkede til hele måneden.
+            <br> <br>
+        Men hvis man fx bare skifter sine proteinkilder i form af kød ud med bønner, linser, tofu eller kikærter, så kan det meget hurtigt blive til mange penge sparet i den anden ende.
+        <br> <br>
+        Udover det kan en vegetarisk kost opfordre til at spise mere sæsonbetonet, hvilket kan være billigere, fordi hvis produkterne er i sæson, er de rigeligt tilgængelige, hvilket vil sige at efterspørgsel vs udbytte er mere lige, hvilket kommer til at sænke prisen. 
+        </p>
+        <br>
+    </div>
+    <!-- Artiklens andet trin opdelt i en div med et tilhørende billede -->
+    <div class="billede">
+        <img src="img/hjerne-salat.webp" alt="hjerne">
+        
+        <h3 class="titel">2. Forbedret Sundhed = Fokus</h3>
+        
+        <p class="billedetekst">'Forbedret sundhed' kan godt lyde lidt vagt, men jeg tror ikke der findes en større snydekode for din læsning end at behandle din krop ordentligt.
+        <br> <br>
+        Hvis man begynder at ernære kroppen ordentligt, og måske også fletter lidt fysisk aktivitet ind i hverdagen, vil din hjerne belønne dig hvis at være i stand til at fokusere i længere perioder af gangen, oveni at bare generelt have mere energi at tage af i løbet af en given dag.
+        </p>
+        <br>
+    </div>
+    <!-- Artiklens tredje trin opdelt i en div med et tilhørende billede -->
+    <div class="billede">
+        <img src="img/plante.webp" alt="jorden">
+       
+        <h3 class="titel">3. Bæredygtighed</h3>
+        
+        <p class="billedetekst">At vælge en mere vegetarisk livsstil har selvfølgelig også positive indvirkninger på miljøet, hvilket bare er en dejlig moralsk bonus oveni det hele.
+        <br> <br>
+        Kødproduktion er en af de største bidragydere til drivhusgasemissioner og skovrydning. Ved at reducere dit kødforbrug bidrager du til en mere bæredygtig planet, som er afgørende for fremtidige generationer.
+        <br> <br>
+        Udover det hjælper det også ved at bremse for kilmaforandringerne så som den ekstreme tørke der kan lede til kæmpestore skovbrande, eller isen der smelter på nordpolen
+        </p>
+    </div>
+    </div>
+
 </body>
 </html>

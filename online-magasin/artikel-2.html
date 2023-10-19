@@ -4,22 +4,175 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel 2</title>
+    <!-- Link til eksternt stylesheet -->
     <link rel="stylesheet" href="css/style-artikel-2.css">
 </head>
 <body>
+    <!--  Navigationsbar med interaktiv søgebar lavet vha. javascript -->
     <nav>
+
+        <!-- Hjemmesidens logo -->
         <div class="logo">
-            <a href="index.html"><img id="studiemad-logo" src="img/Studiemad logo.png" alt="studiemad logo"></a>
+            <a href="index.html"><img id="studiemad-logo" src="img/studiemad-logo.webp" alt="studiemad logo"></a>
         </div>
-        <ul>
+
+        <!-- Hjemmesidens søgefunktion -->
+        <div class="search">
+            <div class="icon"></div>
+            <div class="input">
+                <input type="text" placeholder="Søg" id="mySearch">
+            </div>
+            <span class="clear" onclick="document.getElementById('mySearch').value = ''"></span>
+        </div>
+
+        <!-- Tilhørende javascript til søgefunktionen -->
+        <script>
+            const icon = document.querySelector('.icon')
+            const search = document.querySelector('.search')
+            icon.onclick = function(){
+                search.classList.toggle('active')
+            }
+        </script>
+
+        <!-- Menupunkterne der befinder sig under min navbar -->
+        <ul class="menupunkter">
             <li><a href="index.html">Nyheder</a></li>
-            <li><a href="madplan.html">Madplan</a></li>
+            <li>
+                <a id="madplan" href="madplan.html">Madplan</a>
+                <ul class="dropdown">
+                    <li><a href="madpakkeguide.html">Madpakkeguide</a></li>
+                    <li><a href="indkoebsguide.html">Indkøbsguide</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="opskrifter.html">Opskrifter</a>
+                <ul class="dropdown">
+                    <li><a href="morgenmad.html">Morgenmad</a></li>
+                    <li><a href="frokost.html">Frokost</a></li>
+                    <li><a href="aftensmad.html">Aftensmad</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="vegetar.html">Vegetar</a></li>
+                </ul>
+            </li>
             <li><a href="hjemmesider-og-apps.html">Hjemmesider/Apps</a></li>
-            <li><a href="forum.html">Forum</a></li>
             <li><a href="om-mig.html">Om Mig</a></li>
         </ul>
     </nav>
     
+    <!-- Hele artiklen indelt i sin egen div -->
+    <div class="artikel">
+    <!-- Artikles overskrift med en masse line breaks, så skriften nedenunder ikke er så tæt på overskriften -->
     <h1>De bedste Overnight Oats til hele ugen</h1>
+    <br> <br> <br> <br>
+    
+    <!-- Artiklens forord indelt i sin egen div, med brug af <strong> for at gøre teksten fed, og <br> for at gøe den mere læselig -->
+    <section id="forord">
+    <p><strong>Overnight Oats</strong> er nok en af de billigste måder at lave sin morgenmad på. <br> <br> Samtidigt er det også en af de nemmeste opskrifter at lave mange forskellige variationer af, så man ikke bliver træt af at spise det samme morgenmad hele ugen. <br> <br> Her kommer mine 3 yndlingsopskrifter på <strong>Overnight Oats</strong>, som jeg bare ikke kan blive træt af at spise.</p>
+    </section>
+
+    <!-- Alle opskrifterne indelt i sin egen div -->
+    <div class="opskrifter">
+        <!-- Den første opskrifts div med tilhørende billede -->
+        <div id="opskrift-1">
+            <img src="img/pinacolada-oats-1.webp" alt="Pina Colada">
+            
+            <section class="introduktion">
+            <h3>1. Pina Colada Overnight Oats:</h3>
+            </section>
+    
+            <section class="ingredienser">
+            <h4>Ingredienser:</h4>
+               <ul>
+                <li>2½ dl finvalsede eller grovvalsede havregryn</li>
+                <li>2 spsk chiafrø</li>
+                <li>2 dl kokosmælk</li>
+                <li>1 dl græsk yoghurt</li>
+                <li>2 spsk lys sirup</li>
+                <li>2 tsk vaniljesukker</li>
+                <li>1 nip salt</li>
+                <li>150 g frisk ananas</li>
+                <li>evt kokosflager</li>
+               </ul>
+            </section>
+            
+            <section class="trin">
+            <h4>Trin:</h4>
+                <ol>
+                    <li>Bland havregryn, chiafrø, vaniljesukker, salt, yoghurt og kokosmælk i en skål</li>
+                    <li>Rør det godt sammen, læg låg på og sæt den på køl i minimum 2-3 timer, eller gerne natten over</li>
+                    <li>Inden serveringen røres grøden sammen med ca. 100 gram ananas skåret i små stykker. Resten toppes på grøden, - evt. sammen med lidt kokosflager, mandler eller lignende</li>
+                    <li>Er grøden blevet for fast, så rør evt. op med lidt ekstra mælk, yoghurt eller lignende</li>
+                </ol>
+            </section>
+            </div>
+        <!-- Den anden opskrifts div med tilhørende billede -->
+        <div id="opskrift-2">
+        <img src="img/jordbaer-oats-1.webp" alt="jordbær cheesecake">
+        
+        <section class="introduktion">
+        <h3>2. Jordbær Cheesecake Overnight Oats:</h3>
+        </section>
+
+        <section class="ingredienser">
+        <h4>Ingredienser:</h4>
+        <ul>
+            <li>1 dl grovvalsede eller finvalsede havregryn</li>
+            <li>2 spsk chiafrø</li>
+            <li>1-2 tsk lys sirup</li>
+            <li>½ tsk vaniljepasta</li>
+            <li>2 dl mælk</li>
+            <li>3-4 friske jorbær, lidt ekstra til pynt</li>
+            <li>1 dl hytteost</li>
+            <li>1 spsk philadelphia</li>
+            <li>Knuste digestive kiks til topping</li>
+        </ul>
+        </section>
+
+        <section class="trin">
+        <h4>Trin:</h4>
+        <ol>
+            <li>Tilføj mælk, jordbær, hytteost, flødeost, vanilje og sirup til en blender, og blend indtil det er godt mixet</li>
+            <li>Tilføj havregryn, mælkeblandingen og chiafrø til en beholder som fx. et sylteglas, og rør det godt rundt</li>
+            <li>Læg beholderen i køleskabet og vent helst natten over, men 3-4 timer kan også slå til</li>
+            <li>Når de så er klar morgenen efter, kan det anbefales at røre rundt i det for at finde ud af om det er nødvendigt at tilføje mere mæk for at fortynde det</li>
+            <li>Til sidst top med friske jordbær og knuste digestive kiks, og så er den klar til servering</li>
+        </ol>
+        </section>
+        </div>
+        <!-- Den tredje opskrifts div med tilhørende billede -->
+        <div id="opskrift-3">
+        <img src="img/kanelsnegl-oats-1.webp" alt="Kanelsnegl">
+        
+        <section class="introduktion">
+        <h3>3. Kanelsnegl Overnight Oats:</h3>
+        </section>
+
+        <section class="ingredienser">
+        <h4>Ingredienser:</h4>
+           <ul>
+            <li>1½ dl græsk yoghurt</li>
+            <li>3 dl mælk</li>
+            <li>½ tsk vaniljepasta</li>
+            <li>½ tsk kanel</li>
+            <li>et nip salt</li>
+            <li>2 spsk chiafrø</li>
+            <li>2 spsk brun farin</li>
+            <li>2½ dl finvalsede eller grovvalsede havregryn</li>
+            <li>0,5 dl sultana rosiner</li>
+           </ul>
+        </section>
+        
+        <section class="trin">
+        <h4>Trin:</h4>
+           <ol>
+            <li>Bland alle de våde ingredienser sammen i en stor skål</li>
+            <li>Tilføj de resterende ingredienser og mix</li>
+            <li>Vælg enten at portionere i beholdere som fx sylteglas, eller put et låg over hele portionen, og stil det i køleskabet natten over</li>
+            <li>Top eventuelt med flødeskum, nydes både kold og varm</li>
+           </ol>
+        </section>
+        </div>
+    </div>
+    </div>
 </body>
 </html>

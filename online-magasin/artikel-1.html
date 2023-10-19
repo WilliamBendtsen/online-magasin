@@ -4,22 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artikel 1</title>
+    <!-- Link til eksternt stylesheet -->
     <link rel="stylesheet" href="css/style-artikel-1.css">
 </head>
 <body>
+    <!--  Navigationsbar med interaktiv søgebar lavet vha. javascript -->
     <nav>
+
+        <!-- Hjemmesidens logo -->
         <div class="logo">
-            <a href="index.html"><img id="studiemad-logo" src="img/Studiemad logo.png" alt="studiemad logo"></a>
+            <a href="index.html"><img id="studiemad-logo" src="img/studiemad-logo.webp" alt="studiemad logo"></a>
         </div>
-        <ul>
+
+        <!-- Hjemmesidens søgefunktion -->
+        <div class="search">
+            <div class="icon"></div>
+            <div class="input">
+                <input type="text" placeholder="Søg" id="mySearch">
+            </div>
+            <span class="clear" onclick="document.getElementById('mySearch').value = ''"></span>
+        </div>
+
+        <!-- Tilhørende javascript til søgefunktionen -->
+        <script>
+            const icon = document.querySelector('.icon')
+            const search = document.querySelector('.search')
+            icon.onclick = function(){
+                search.classList.toggle('active')
+            }
+        </script>
+
+        <!-- Menupunkterne der befinder sig under min navbar -->
+        <ul class="menupunkter">
             <li><a href="index.html">Nyheder</a></li>
-            <li><a href="madplan.html">Madplan</a></li>
+            <li>
+                <a id="madplan" href="madplan.html">Madplan</a>
+                <ul class="dropdown">
+                    <li><a href="madpakkeguide.html">Madpakkeguide</a></li>
+                    <li><a href="indkoebsguide.html">Indkøbsguide</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="opskrifter.html">Opskrifter</a>
+                <ul class="dropdown">
+                    <li><a href="morgenmad.html">Morgenmad</a></li>
+                    <li><a href="frokost.html">Frokost</a></li>
+                    <li><a href="aftensmad.html">Aftensmad</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="vegetar.html">Vegetar</a></li>
+                </ul>
+            </li>
             <li><a href="hjemmesider-og-apps.html">Hjemmesider/Apps</a></li>
-            <li><a href="forum.html">Forum</a></li>
             <li><a href="om-mig.html">Om Mig</a></li>
         </ul>
     </nav>
-    
-    <h1>TooGoodToGo - Begynderguide</h1>
+
+<!-- Hele min artikel opdelt i en div -->
+    <div class="artikel">
+    <!-- Artiklens forord i sin egen div -->
+<div class="forord">
+    <h1>TooGoodToGo - En Begynderguide</h1>
+    <br> <br>
+    <p id="forord">Vi er vist nok alle ved at være godt klar over problemet med madspild. Men på trods hvor mange der kender til den her app, så vil jeg mene at den slet ikke blive brugt nok. <br> <br> Dette skyldes for det meste at appen kan være uoverskuelig at bruge, og det er lige præcis hvad jeg vil forsøge at modbevise. <br> <br> Alt det kræver er lidt planlægning og at have telefonen klar, og denne artikel vil trin for trin gå igennem hvordan du kommer godt i gang. </p>
+    <br> <br>
+</div>
+    <!-- Artiklens introduktion i sin egen div med en vedhæftet videoguide -->
+<div class="intro">
+    <video src="video/TooGoodToGo-Guide.mov" controls>
+        Ups! Videoen kunne ikke indlæses
+    </video>
+    <p>Her er et eksempel af mig der bestiller en lykkepose fra Q8</p>
+<br> <br>
+    <h2>Hvad er TooGoodToGo?</h2>
+<br>
+<p>
+Til jer der ikke ved det, så er TooGoodToGo er en app, hvor restauranter, caféer, supermarkeder og andre fødevarevirksomheder forsøger at redde overskudsmad, der ellers ville blive smidt ud. <br> <br> Virksomhederne sælger den overskydende mad til drastisk nedsatte priser i form af "lykeposer", som man henter via appen på forskellige tidspunkter om dagen.
+</p>
+<br> <br>
+</div>
+
+<!-- Alle artiklens trin opdelt i individuelle divs -->
+<div class="trin">
+    <!-- Artiklens første trin i sin egen div, med et tilhørende billede -->
+<div class="trin-1">
+    <img src="img/trin-1.webp" alt="trin 1">
+<h2>Trin 1: Download og Registrer Dig</h2>
+<br>
+<p>
+Den første ting, du skal gøre, er at downloade TooGoodToGo-appen fra App Store eller Google Play. <br> <br> Når appen er installeret, åbner du den og registrerer dig. Dette kræver blot din e-mailadresse og oprettelse af et kodeord.
+</p>
+<br> <br>
+</div>
+
+<!-- Artiklens andet trin i sin egen div, med et tilhørende billede -->
+<div class="trin-2">
+    <img src="img/trin-2.webp" alt="trin 2">
+<h2>Trin 2: Find Maden</h2>
+<br>
+<p>
+Når du har åbnet appen, kan du finde alle de steder i dit område, der deltager i Too Good To Go-programmet. <br> <br> Du kan fx filtrere resultaterne efter afstanden fra din nuværende lokalitet.
+</p>
+<br> <br>
+</div>
+
+<!-- Artiklens tredje trin i sin egen div, med et tilhørende billede -->
+<div class="trin-3">
+    <img src="img/trin-3.webp" alt="trin 3">
+<h2>Trin 3: Bestil Din Lykkepose</h2>
+<br>
+<p>
+Når du har fundet et sted, du gerne vil bestille mad fra, kan du vælge det og se, hvad de tilbyder på dagen. Denne gang var det en såkaldt "aftenpose"<br> <br> Lykkeposen er tit sådan noget som rester fra en buffet, man henter efter restauranten er lukket, eller fx, som her, en tankstation der vil af med det der står bag glasset. 
+</p>
+<br> <br>
+</div>
+
+<!-- Artiklens fjerde trin i sin egen div, med et tilhørende billede -->
+<div class="trin-4">
+    <video src="video/TooGoodToGo-Afhentning.mov" controls></video>
+<h2>Trin 4: Afhent Din Mad</h2>
+<br>
+<p>
+Når betalingen er bekræftet, får du en kvittering, og du kan se hvilket tidspunkt du skal hente din mad. <br> <br> Videoen ovenover er af mig der henter min lykkepose, så i kan få en fornemmelse af hvordan det kommer til at ske.
+</p>
+<br> <br>
+</div>
+
+<!-- Artiklens ekstra trin i sin egen div, med 2 tilhørende billeder -->
+<div class="trin-5">
+    <div class="trin-5-billeder">
+    <img src="img/trin-5-1.webp" alt="trin 5.1">
+    <img src="img/trin-5-2.webp" alt="trin 5.2">
+    </div>
+<h2>Til de mere erfarne:</h2>
+<br>
+<p>
+- Husk at slå notifikationer for så mange steder som du kan, da lykkeposerne ofte bliver lagt ud på forskellige tidspunkter af dagen, og har det med at blive udsolgt hurtigt.
+<br> <br> 
+- Se efter hvornår tingene bliver udsolgt, og se efter mønstrene, så du næste gang selv kan være den første til at bestille.
+<br> <br>
+- Det er en kæmpe hjælp at slå lokalitetstjenester til, specielt hvis du pendler meget fra by til by. Så får du notifikationer rettet mod den rigtige by hele tiden.
+<br> <br>
+- Vær fleksibel med hentetidspunkter, da det kan variere fra sted til sted. Det kan godt være irriterende at skal hente noget klokken 10 om aftenen, men hvis man kigger på prisaspektet vs hvor uoverskueligt det kan være at gøre, så vil jeg mene at det næsten altid er det værd.
+</p>
+</div>
+    </div>
+</div>
 </body>
 </html>

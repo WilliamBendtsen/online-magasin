@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frokost</title>
+    <!-- Link til eksternt stylesheet -->
+    <link rel="stylesheet" href="css/style-frokost.css">
+</head>
+<body>
+    <!--  Navigationsbar med interaktiv søgebar lavet vha. javascript -->
+    <nav>
+
+        <!-- Hjemmesidens logo -->
+        <div class="logo">
+            <a href="index.html"><img id="studiemad-logo" src="img/studiemad-logo.webp" alt="studiemad logo"></a>
+        </div>
+
+        <!-- Hjemmesidens søgefunktion -->
+        <div class="search">
+            <div class="icon"></div>
+            <div class="input">
+                <input type="text" placeholder="Søg" id="mySearch">
+            </div>
+            <span class="clear" onclick="document.getElementById('mySearch').value = ''"></span>
+        </div>
+
+        <!-- Tilhørende javascript til søgefunktionen -->
+        <script>
+            const icon = document.querySelector('.icon')
+            const search = document.querySelector('.search')
+            icon.onclick = function(){
+                search.classList.toggle('active')
+            }
+        </script>
+
+        <!-- Menupunkterne der befinder sig under min navbar -->
+        <ul class="menupunkter">
+            <li><a href="index.html">Nyheder</a></li>
+            <li>
+                <a id="madplan" href="madplan.html">Madplan</a>
+                <ul class="dropdown">
+                    <li><a href="madpakkeguide.html">Madpakkeguide</a></li>
+                    <li><a href="indkoebsguide.html">Indkøbsguide</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="opskrifter.html">Opskrifter</a>
+                <ul class="dropdown">
+                    <li><a href="morgenmad.html">Morgenmad</a></li>
+                    <li><a href="frokost.html">Frokost</a></li>
+                    <li><a href="aftensmad.html">Aftensmad</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="vegetar.html">Vegetar</a></li>
+                </ul>
+            </li>
+            <li><a href="hjemmesider-og-apps.html">Hjemmesider/Apps</a></li>
+            <li><a href="om-mig.html">Om Mig</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

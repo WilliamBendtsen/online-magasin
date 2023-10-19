@@ -7,12 +7,12 @@
 }
 
 body{
-    font-family: montserrat;
+    font-family: avenir, sans-serif;
     background: #F6EDD9;
 }
 
 nav{
-    background: white;
+    background: #F6EDD9;
      height: 80px;
      width: 100%;
      position: relative;
@@ -21,14 +21,12 @@ nav{
 #studiemad-logo{
     height: 50px;
     width: auto;
-    position: absolute;
 }
-
 
 .logo{
     width: 300px;
     height: 300px;
-    position: absolute;
+    position: relative;
     max-width: 100%;
     height: auto;
     left: 50%;
@@ -38,24 +36,46 @@ nav{
 
 .menupunkter{
     text-align: center;
-    position: absolute;
 }
 
 .menupunkter li{
     display: inline-block;
-    line-height: 170px;
-    margin: 5px 142px;
+    line-height: 60px;
+    margin: 5px 102px;
+    position: relative;
 }
 
 .menupunkter li a{
-    color: black;
+    color: #003500;
+    opacity: 60%;
     font-size: 18px;
     border-radius: 3px;
+    display: block;
 }
 
 .menupunkter a:hover{
-    background: greenyellow;
+    opacity: 100%;
     transition: .5s;
+    color: #6AB757;
+}
+
+.dropdown{
+    width: 15vh;
+    background: white;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    left: 0;
+}
+
+.dropdown li{
+    display: block;
+    margin: 0;
+    text-align: left;
+}
+
+.menupunkter li:hover .dropdown{
+    display: block;
 }
 
 .checkbtn{
@@ -75,16 +95,21 @@ nav{
 }
 
 .search{
-    position: relative;
+    position: absolute;
     width: 60px;
     height: 60px;
-    background: yellowgreen;
+    background: white;
     border-radius: 60px;
     transition: 0.5s;
-    box-shadow: 0 0 0 5px yellowgreen;
+    box-shadow: 0 0 0 5px #6AB757;
     float: right;
     top: 10px;
     right: 20px;
+    overflow: hidden;
+}
+
+.search.active{
+    width: 360px;
 }
 
 .search .icon{
@@ -107,7 +132,7 @@ nav{
     position: absolute;
     width: 15px;
     height: 15px;
-    border: 3px solid yellowgreen;
+    border: 3px solid #6AB757;
     border-radius: 50%;
     transform: translate(-5px,-5px);
 }
@@ -117,41 +142,119 @@ nav{
     position: absolute;
     width: 3px;
     height: 15px;
-    background: yellowgreen;
+    background: #6AB757;
     transform: translate(6px,6px) rotate(315deg);
 }
 
-@media (max-width: 858px){
-    #menu{
-        display: block;
-        line-height: 80px;
-    }
-    .menupunkter{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background: #2c3e50;
-        top: 80px;
-        left: -100%;
-        text-align: center;
-        transition: all .5s;
-    }
-    .menupunkter li{
-        display: block;
-    }
-    .menupunkter li a{
-        font-size: 30px;
-    }
-    a:hover{
-        background: none;
-        color: yellowgreen;
-    }
-    #check:checked ~ .menupunkter{
-        left: 0;
-    }
+.search .input{
+    position: relative;
+    width: 300px;
+    height: 60px;
+    left: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.search .input input{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    padding: 10px 0;
+}
+
+.clear{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    right: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear::before{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(45deg);
+}
+
+.clear::after{
+    position: absolute;
+    content: '';
+    width: 1px;
+    height: 15px;
+    background: #999;
+    transform: rotate(315deg);
+}
 
 .artikler{
-    margin-top: 50px;
+    margin-top: auto;
+}
+
+#artikel-billede-1{
+    height: 50vh;
+    width: 60vh;
+}
+
+#artikel-billede-2{
+    height: 55vh;
+    right: 20vh;
+    top: 25vh;
+}
+
+#artikel-billede-3{
+    height: 60vh;
+}
+
+.artikler div img{
+    display: block;
+    margin: 0 auto;
+}
+
+.artikler div h1{
+    margin: 5px 0;
+    text-align: center;
+    font-size: 30px;
+}
+
+.artikler div a h1{
+    color: #003500;
+}
+
+.eyebrow{
+    font-size: 14px;
+    color: #003500;
+    display: block;
+    margin-top: 4px;
+    text-align: center;
+}
+
+#artikel-1{
+    position: absolute;
+    left: 100px;
+    top: 25vh;
+}
+
+#artikel-2{
+    position: absolute;
+    right: 10vh;
+    top: 25vh;
+}
+
+#artikel-3{
+    position: relative;
+    top: 120vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

@@ -4,42 +4,87 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyheder</title>
+    <!-- Link til eksternt stylesheet -->
     <link rel="stylesheet" href="css/style-index.css">
-    <script src="https://kit.fontawesome.com/410264dd86.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <body>
+   <!--  Navigationsbar med interaktiv søgebar lavet vha. javascript -->
     <nav>
 
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i id="menu" class="fa-solid fa-bars"></i>
-        </label>
+        <!-- Hjemmesidens logo -->
+        <div class="logo">
+            <a href="index.html"><img id="studiemad-logo" src="img/studiemad-logo.webp" alt="studiemad logo"></a>
+        </div>
 
+        <!-- Hjemmesidens søgefunktion -->
         <div class="search">
             <div class="icon"></div>
-            <div class="input"></div>
+            <div class="input">
+                <input type="text" placeholder="Søg" id="mySearch">
+            </div>
+            <span class="clear" onclick="document.getElementById('mySearch').value = ''"></span>
         </div>
 
-        <div class="logo">
-            <a href="index.html"><img id="studiemad-logo" src="img/Studiemad logo.png" alt="studiemad logo"></a>
-        </div>
-        
+        <!-- Tilhørende javascript til søgefunktionen -->
+        <script>
+            const icon = document.querySelector('.icon')
+            const search = document.querySelector('.search')
+            icon.onclick = function(){
+                search.classList.toggle('active')
+            }
+        </script>
+
+        <!-- Menupunkterne der befinder sig under min navbar -->
         <ul class="menupunkter">
             <li><a href="index.html">Nyheder</a></li>
-            <li><a href="madplan.html">Madplan</a></li>
+            <li>
+                <a id="madplan" href="madplan.html">Madplan</a>
+                <ul class="dropdown">
+                    <li><a href="madpakkeguide.html">Madpakkeguide</a></li>
+                    <li><a href="indkoebsguide.html">Indkøbsguide</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="opskrifter.html">Opskrifter</a>
+                <ul class="dropdown">
+                    <li><a href="morgenmad.html">Morgenmad</a></li>
+                    <li><a href="frokost.html">Frokost</a></li>
+                    <li><a href="aftensmad.html">Aftensmad</a></li>
+                    <li><a href="dessert.html">Dessert</a></li>
+                    <li><a href="vegetar.html">Vegetar</a></li>
+                </ul>
+            </li>
             <li><a href="hjemmesider-og-apps.html">Hjemmesider/Apps</a></li>
-            <li><a href="forum.html">Forum</a></li>
             <li><a href="om-mig.html">Om Mig</a></li>
         </ul>
     </nav>
 
+    <!-- En div der indeholder alle mine artikler -->
     <div class="artikler">
-        <a href="artikel-1.html"><img src="#" alt="artikel 1"></a>
-        <br> <br> <br> <br>
-        <a href="artikel-2.html"><img src="#" alt="artikel 2"></a>
-        <br> <br> <br> <br>
-        <a href="artikel-3.html"><img src="#" alt="artikel 3"></a>
+        <!-- Min første artikel i sin egen div -->
+        <div id="artikel-1">
+        <!-- Min første artikels billede, med tilhørende overskrift samt øjenbrynsoverskrift -->
+        <a href="artikel-1.html"><img id="artikel-billede-1" src="img/toogoodtogo-logo.webp" alt="artikel 1">
+        <h1 class="titel"> <span class="eyebrow">Servicemeddelelse</span>   
+            TooGoodToGo - En Begynderguide</h1>
+        </a>
+        </div>
+        <!-- Min anden artikel i sin egen div -->
+        <div id="artikel-2">
+        <!-- Min anden artikels billede, med tilhørende overskrift samt øjenbrynsoverskrift -->
+        <a href="artikel-2.html"><img id="artikel-billede-2" src="img/overnight-oats-artikel.webp" alt="artikel 2">
+        <h1 class="titel"> <span class="eyebrow">Opskrifter</span>
+            De Bedste Overnight Oats Til Hele Ugen</h1>
+        </a>
+        </div>
+        <!-- Min tredje artikel i sin egen div -->
+        <div id="artikel-3">
+        <!-- Min tredje artikels billede, med tilhørende overskrift samt øjenbrynsoverskrift -->
+        <a href="artikel-3.html"><img id="artikel-billede-3" src="img/vegetar.webp" alt="artikel 3">
+        <h1 class="titel"> <span class="eyebrow">Forsøget Værd</span>   
+            3 Grunde Til Hvorfor Du Skal Prøve Vegetarlivet Som Studerende</h1>
+        </a>
+        </div>
     </div>
 </body>
 </html>
